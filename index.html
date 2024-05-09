@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vzorová šablona</title>
+
+	<!-- Load Blockly core -->
+	<script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+	<!-- Load the default blocks -->
+	<script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+	<!-- Load a generator -->
+	<script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+	<!-- Load a message file -->
+	<script src="https://unpkg.com/blockly/msg/cs.js"></script>
+	<script src="myScript.js"></script>
+	<script src="tasks.js"></script>
+	<script src="blocksDefinition.js"></script>	
+	<script src="generatorStubs.js"></script>
+	
+
+	<style>
+		#bloky {
+			width: 90%;
+			margin: auto;
+		}
+		#task {
+			width: 90%;
+			margin: auto;
+			min-height: 8em;
+			background-color: azure;
+		}
+		#upperButtons{
+			width: 90%;
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body id="body">
+	<h1>Music Player</h1>
+	<div id="upperButtons">
+		<button id="generateJS" onclick="GenerateJSClick()">Try!</button>
+		<button id="generateTask" onclick="GenerateTaskClick()">Generate new task!</button>
+	</div>
+
+	<div id="task">
+
+	</div>
+	<div id="bloky">
+		<div id="blockly-wrap" style="height: 480px; min-width: 600px;">
+		</div>
+	</div>
+
+	<!-- definice prostredi s bloky - TOOLBOX XML -->
+	<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+		<block type="tone" deletable="true" movable="true" editable="true">
+		  <field name="note">55</field>
+		  <field name="time">0.125</field>
+		</block>
+		<block type="semitone" deletable="true" movable="true" editable="true">
+		  <field name="tone">56</field>
+		  <field name="time">0.125</field>
+		</block>
+		<block type="pause" deletable="true" movable="true" editable="true">
+		  <field name="time">0.125</field>
+		</block>
+		<block type="midi" deletable="true" movable="true" editable="true">
+		  <field name="tone">69</field>
+		  <field name="time">0.125</field>
+		</block>
+		<block type="repeat">
+		  <field name="rep">2</field>
+		</block>
+	  </xml>
+	<script src="workspace.js"></script>
+</body>
+</html>
