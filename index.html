@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vzorová šablona</title>
+    <title>Blockly Music Player</title>
 
 	<!-- Load Blockly core -->
 	<script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
@@ -19,6 +19,10 @@
 	
 
 	<style>
+		body
+		{
+			background-color: #ffc;
+		}
 		#bloky {
 			width: 90%;
 			margin: auto;
@@ -33,13 +37,39 @@
 			width: 90%;
 			margin: auto;
 		}
+		#headingWrapper
+		{
+			width: 90%;
+			margin: auto;
+		}
+		h1
+		{
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+		#hint
+		{
+			font-style: italic;
+		}
+		#generateJS, #generateTask
+		{
+    		margin: 0.5em 0.5em 0.5em 0;
+    		background-color: lightsteelblue;
+    		border: 3px solid black;
+			padding: 0.5em;
+		}
 	</style>
 </head>
 
 <body id="body">
-	<h1>Music Player</h1>
+	<div id="headingWrapper">
+		<h1>Blockly Music Player</h1>
+		<div id="hint">
+			Generate a task, then drag&drop all the notes and then play the notes to see whether you hit them all!
+		</div>
+	</div>
+
 	<div id="upperButtons">
-		<button id="generateJS" onclick="GenerateJSClick()">Try!</button>
+		<button id="generateJS" onclick="GenerateJSClick()">Play!</button>
 		<button id="generateTask" onclick="GenerateTaskClick()">Generate new task!</button>
 	</div>
 
